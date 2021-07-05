@@ -4,8 +4,8 @@ const Comp1 = ({ pokemonName }) => {
   return (
     <div>
       <h2>Component 1</h2>
-      <h2>isi di sini</h2>
-      <Comp2 />
+      <h2>{pokemonName}</h2>
+      <Comp2 pkmnName={pokemonName} />
     </div>
   );
 };
