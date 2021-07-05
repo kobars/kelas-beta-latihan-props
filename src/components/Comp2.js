@@ -4,8 +4,8 @@ const Comp2 = ({ pkmnName }) => {
   return (
     <div className="mt-4">
       <h3>Component 2</h3>
-      <h3>isi di sini</h3>
-      <Comp3 />
+      <h3>{pkmnName}</h3>
+      <Comp3 pokName={pkmnName} />
     </div>
   );
 };
