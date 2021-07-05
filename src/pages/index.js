@@ -18,6 +18,8 @@ function Index() {
     setPokemonName(name);
   };
 
+  //   Ini contoh commit
+
   return (
     <div className="container pt-4">
       <h1 className="text-center">Pokemon App</h1>
