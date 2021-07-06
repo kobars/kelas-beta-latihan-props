@@ -1,9 +1,13 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+import { Link } from 'react-router-dom';
 import Comp1 from '../components/Comp1';
+import { PokemonContext } from '../App';
 
 function Index() {
     const [pokemons, setPokemons] = useState([]);
-    const [pokemonName, setPokemonName] = useState('');
+    // const [pokemonName, setPokemonName] = useState("");
+    const { states, dispatch } = useContext(PokemonContext);
+    const pokemonName = states.pokemonName;
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,11 +21,12 @@ function Index() {
     }, []);
 
     const handleDetail = name => {
-        setPokemonName(name);
+        dispatch({ type: 'pokemon', payload: name });
     };
 
     return (
         <div className="container pt-4">
+            <Link to="/page-two">Pindah ke halaman dua</Link>
             <h1 className="text-center">Pokemon App</h1>
             <div className="row mt-4">
                 <div className="col-8">
