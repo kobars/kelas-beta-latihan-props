@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { PokemonContext } from "../App";
+
 const HalamanDua = () => {
-  return <h1>Ganti di sini</h1>;
+  const { states } = useContext(PokemonContext);
+  return <h1>{states.pokemonName}</h1>;
 };
 
 export default HalamanDua;
